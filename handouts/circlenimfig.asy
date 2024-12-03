@@ -10,14 +10,11 @@ path pcircle = circle((0,0), bigradius);
 //draw();
 
 for(int idx = 0; idx < N; ++idx) {
-  pair pos = bigradius * (sin(idx * rangle), cos(idx * rangle));
-  //clip(circle(pos, smallradius));
-  path p = circle(pos, smallradius);
+    pair pos = bigradius * (sin(idx * rangle), cos(idx * rangle));
+    //clip(circle(pos, smallradius));
+    path p = circle(pos, smallradius);
 
-  pair pos1 = bigradius * (sin(( idx + 1) * rangle), cos(( idx + 1) * rangle));
-  path p1 = circle(pos1, smallradius);
-    
-  draw(p);
+    draw(p);
 
     draw(arc((0,0), bigradius, (idx + 2 * smallradius / bigradius )*(360/N)
 	     , (idx + 1 - 2 * smallradius / bigradius)*(360/N)));
