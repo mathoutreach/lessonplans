@@ -1,0 +1,78 @@
+\documentclass[12pt]{report}
+
+\usepackage{graphicx}
+
+
+\title{Symmetries of equilateral triangles}
+
+
+\begin{document}
+
+\thispagestyle{empty}
+
+The group of symmetries of an equilateral triangle is size 6.  In
+addition to the identity, there are two rotations, and three flips.
+We can label the vertices to track how they move under the action of
+this group.  While the vertices may move, the shape stays the same; this
+is what we mean by symmetries.  They are:
+\begin{figure*}
+   \centering
+   \begin{tabular}{|c|c|c|}
+     \hline
+     Nothing! & $1$ & \includegraphics[width=2cm]{id.pdf}\\
+     \hline
+     right & $r$ & \includegraphics[width=2cm]{l.pdf}\\
+     \hline
+     left & $\ell$ &\includegraphics[width=2cm]{r.pdf}\\
+     \hline
+     flip & $f$ & \includegraphics[width=2cm]{f0.pdf}\\
+     \hline
+     flip right & $f_r$ &\includegraphics[width=2cm]{f2.pdf}\\
+     \hline
+     flip left & $f_\ell$ & \includegraphics[width=2cm]{f1.pdf}\\
+     \hline
+   \end{tabular}
+\end{figure*}
+
+If we were to perform on action and then another action, we would
+still get the same shape, but the vertices get moved somewhere else.
+Since there are only six possibilities for where they might end up,
+each combination of symmetries has got to be one of the six symmetries
+that we've already found!
+
+For example, if we first rotate to the right ($r$), and then flip
+horitontally ($f$), then we get
+\begin{figure*}[h]
+  \centering
+   \includegraphics[width=6cm]{rf.pdf}
+\end{figure*}
+which is just $f_r$!  If we do this in the opposite order, doing $f$
+then $r$, we get
+\begin{figure*}[h]
+  \centering
+   \includegraphics[width=6cm]{fr.pdf}
+\end{figure*}
+then we get something different; it's $f_\ell$ this time!  So, order matters:
+\begin{eqnarray*}
+  r \times{} f &= f_r\\
+  f \times{} r &= f_\ell\\
+\end{eqnarray*}
+
+
+
+\begin{figure*}
+   \centering
+   \begin{tabular}{c|cccccc}
+     & 1 & $r$ & $\ell$ & $f$ & $f_r$ & $f_\ell$ \\
+     \hline
+     1        & 1        & $r$    & $\ell$    & $f$ & $f_r$ & $f_\ell$ \\
+     $r$      & $r$      & $\ell$ & $1$       & $f_\ell$ & $f$   & $f_r$      \\
+     $\ell$   & $\ell$   & $1$    & $r$       & $f_r$ & $f_\ell$   & $f$      \\
+     $f$      & $f$      & $f_r$  & $f_\ell$   & $1$ & $r$   & $\ell$      \\
+     $f_r$    & $f_r$     & $f_\ell$   & $f$    & $\ell$ & $1$   & $r$      \\
+     $f_\ell$  & $f_\ell$   & $f$   & $f_r$      & $r$ & $\ell$   & $1$      \\
+   \end{tabular}
+   \caption{Apply the left option follow by the top option.}
+\end{figure*}
+
+\end{document}
