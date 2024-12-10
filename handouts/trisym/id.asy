@@ -1,16 +1,28 @@
 size(50, 50);
 
-pair pA = (0, 1);
-real r = 120;
-pair pB = (cos(radians(r)), sin(radians(r))) * pA;
-pair pC = (cos(radians(r)), sin(radians(r))) * pB;
+import triutils;
 
-//dot((0,0));
+real r = -120;
+pair A = (0, 1);
+pair B = (cos(radians(r)), sin(radians(r))) * A;
+pair C = (cos(radians(r)), sin(radians(r))) * B;
 
-draw(pA--pB--pC--cycle);
+pair[] p = {A, B, C};
 
+int symidx = 0;
+usersetting();
 
-dot(pA, red);
-dot(pB, blue);
-dot(pC, darkgreen);
+if(symidx == 1)
+    r(p);
+if(symidx == 2)
+    l(p);
+if(symidx == 3)
+    f(p);
+if(symidx == 4)
+    fr(p);
+if(symidx == 5)
+    fl(p);
 
+drawtriangle(p);
+
+drawsym(p, symidx);
