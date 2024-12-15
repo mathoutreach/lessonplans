@@ -13,15 +13,15 @@ int symidx = 0;
 usersetting();
 
 if(symidx == 1)
-    r(p);
+    p = r(p);
 if(symidx == 2)
-    l(p);
+    p = l(p);
 if(symidx == 3)
-    f(p);
+    p = f(p);
 if(symidx == 4)
-    fr(p);
+    p = fr(p);
 if(symidx == 5)
-    fl(p);
+    p = fl(p);
 
 drawtriangle(p);
 

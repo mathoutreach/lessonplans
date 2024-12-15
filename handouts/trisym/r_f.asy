@@ -12,19 +12,13 @@ pair pos = (0,0);
 
 drawtriangle(p, pos);
 
-r(p);
 
 pos += (3, 0);
-
-drawtriangle(p, pos);
-
-draw("$r$", (1,0)--(2,0), N, EndArrow);
+draw("$r$", (1,0)--(2,0),N, EndArrow);
+pair[] q = r(p);
+drawtriangle(q, pos);
 
 pos += (3, 0);
-
-f(p);
-
-drawtriangle(p, pos);
-
-draw("$f$", (4,0)--(5,0),N, EndArrow);
-
+draw("$f$", (4,0)--(5,0),N,EndArrow);
+pair[] s = fl(p);
+drawtriangle(s, pos);
