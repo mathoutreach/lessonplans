@@ -1,7 +1,8 @@
-\documentclass[12pt]{report}
+\documentclass[12pt]{article}
 
 \usepackage{graphicx}
-
+\usepackage{amsmath}
+\usepackage{breqn}
 
 \title{Symmetries of equilateral triangles}
 
@@ -10,29 +11,38 @@
 
 \thispagestyle{empty}
 
+\maketitle
+
 The group of symmetries of an equilateral triangle is size 6.  In
 addition to the identity, there are two rotations, and three flips.
 We can label the vertices to track how they move under the action of
 this group.  While the vertices may move, the shape stays the same; this
-is what we mean by symmetries.  They are:
-\begin{figure*}
+is what we mean by symmetries.  They are givne in Figure~\ref{trisym}.
+\begin{figure}[h]
    \centering
-   \begin{tabular}{|c|c|c|}
+   \begin{tabular}{|c|c|c|c|}
+     \hline Action: & Nothing! & right & left  \\
      \hline
-     Nothing! & $1$ & \includegraphics[width=2cm]{id.pdf}\\
+     Symbol: & $1$ & $r$ & $\ell$  \\
      \hline
-     right & $r$ & \includegraphics[width=2cm]{r.pdf}\\
+     Diagram: &
+     \includegraphics[width=2cm]{id.pdf} &
+     \includegraphics[width=2cm]{r.pdf}  &
+     \includegraphics[width=2cm]{l.pdf} \\
      \hline
-     left & $\ell$ &\includegraphics[width=2cm]{l.pdf}\\
+     \hline Action: & flip & flip right & flip left \\
      \hline
-     flip & $f$ & \includegraphics[width=2cm]{f.pdf}\\
+     Symbol: & $f$ & $f_r$ & $f_\ell$ \\
      \hline
-     flip right & $f_r$ &\includegraphics[width=2cm]{fr.pdf}\\
-     \hline
-     flip left & $f_\ell$ & \includegraphics[width=2cm]{fl.pdf}\\
+     Diagram: &
+     \includegraphics[width=2cm]{f.pdf}  &
+     \includegraphics[width=2cm]{fr.pdf} &
+     \includegraphics[width=2cm]{fl.pdf}\\
      \hline
    \end{tabular}
-\end{figure*}
+   \caption{The symmetries of an equilateral triangle.}
+  \label{trisym}
+\end{figure}
 
 If we were to perform on action and then another action, we would
 still get the same shape, but the vertices get moved somewhere else.
@@ -41,39 +51,88 @@ each combination of symmetries has got to be one of the six symmetries
 that we've already found!
 
 For example, if we first rotate to the right ($r$), and then flip
-horitontally ($f$), then we get
-\begin{figure*}[h]
+horitontally ($f$), then we get:
+\begin{figure}[h]
   \centering
-   \includegraphics[width=6cm]{r_f.pdf}
-\end{figure*}
+  \includegraphics[width=6cm]{r_f.pdf}
+  \caption{First $r$ then $f$.}
+\end{figure}
 which is just $f_\ell$!  If we do this in the opposite order, doing $f$
 then $r$, we get
-\begin{figure*}[h]
+\begin{figure}[h]
   \centering
-   \includegraphics[width=6cm]{f_r.pdf}
-\end{figure*}
-then we get something different; it's $f_r$ this time!  So, order matters:
-\begin{eqnarray*}
-  f \circ r &= f_\ell\\
-  r \circ f &= f_r\\
-\end{eqnarray*}
+  \includegraphics[width=6cm]{f_r.pdf}
+  \caption{First $f$ then $r$.}
+\end{figure}
+then we get something different; it's $f_r$ this time!  So, order
+matters.  If we do $r$ then $f$, we write $f\circ{}r$ and get
+$f_\ell$.  If we do $f$ then $r$ we write $r\circ{}f$ and get $f_r$.
+That is,
+\begin{equation}
+  \label{frrf}
+  f \circ r = f_\ell \neq r \circ f = f_r.
+\end{equation}
 
-
-
-
-\begin{figure*}
+So, just like with the $1,\dots,9$, we can make a multiplication table
+with these symmetries.  For $1,\dots,9$, the numbers get bigger;
+$3\times{}4=12>9$, for example.  But for symmetries, whatever
+symmetries we combine, we always end up with one of the 6 symmetries
+with which we started - the result is always a triangle that's been
+flipped or rotated.  We've figured out two of them in
+equation~\eqref{frrf}.  To figure out the other 36, we can just apply
+one translation and then another!  However, this is a lot of work;
+especially so because it seems easy to make mistakes.  Instead, we can
+express the symmetries as permutations of the indices, which is shown
+in Figure~\ref{permtab}.
+\begin{figure}[h]
    \centering
-   \begin{tabular}{c|cccccc}
-     & 1 & $r$ & $\ell$ & $f$ & $f_r$ & $f_\ell$ \\
+   \begin{tabular}{|c|c|}
      \hline
-     1        & 1        & $r$    & $\ell$    & $f$ & $f_r$ & $f_\ell$ \\
-     $r$      & $r$      & $\ell$ & $1$       & $f_\ell$ & $f$   & $f_r$      \\
-     $\ell$   & $\ell$   & $1$    & $r$       & $f_r$ & $f_\ell$   & $f$      \\
-     $f$      & $f$      & $f_r$  & $f_\ell$   & $1$ & $r$   & $\ell$      \\
-     $f_r$    & $f_r$     & $f_\ell$   & $f$    & $\ell$ & $1$   & $r$      \\
-     $f_\ell$  & $f_\ell$   & $f$   & $f_r$      & $r$ & $\ell$   & $1$      \\
+     Symmetry & Permutation \\
+     \hline \hline
+     $1$ & $(1)$ \\
+     \hline
+     $r$ & $(321)$ \\
+     \hline
+     $\ell$ & $(231)$ \\
+     \hline
+     $f$ & $(23)$ \\
+     \hline
+     $f_r$ & $(12)$ \\
+     \hline
+     $f_\ell$ & $(13)$ \\
+     \hline
    \end{tabular}
-   \caption{Apply the left option follow by the top option.}
-\end{figure*}
+   \caption{Symmetries and permutations}
+  \label{permtab}
+\end{figure}
+When we apply two permutations we can use the rules of combining
+permutations.  For example,
+\begin{dmath}
+  r \circ f
+  = (321)(23)
+  = (12)
+  = f_r.
+\end{dmath}
+This can be a simpler way to figure out the composition of operations.
+Performing this on all of the symmetries, get the table in
+Figure~\ref{multtab}.
+\begin{figure}[h]
+  \centering
+  \begin{tabular}{c|cccccc|}
+    & 1 & $r$ & $\ell$ & $f$ & $f_r$ & $f_\ell$ \\
+    \hline
+    1        & 1        & $r$    & $\ell$    & $f$ & $f_r$ & $f_\ell$ \\
+    $r$      & $r$      & $\ell$ & $1$       & $f_\ell$ & $f$   & $f_r$      \\
+    $\ell$   & $\ell$   & $1$    & $r$       & $f_r$ & $f_\ell$   & $f$      \\
+    $f$      & $f$      & $f_r$  & $f_\ell$   & $1$ & $r$   & $\ell$      \\
+    $f_r$    & $f$     & $f_\ell$   & $f$    & $\ell$ & $1$   & $r$      \\
+    $f_\ell$  & $f_\ell$   & $f$   & $f_r$      & $r$ & $\ell$   & $1$      \\
+    \hline
+  \end{tabular}
+  \caption{Multiplication table for the symmetries of the triangle:
+    apply the left option follow by the top option.}
+  \label{multtab}
+\end{figure}
 
 \end{document}
