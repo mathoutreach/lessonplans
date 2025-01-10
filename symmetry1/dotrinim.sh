@@ -1,5 +1,11 @@
 #!/bin/bash
 
+asy -f pdf trinimfig
+latexmk -pdf trinim.tex
+
+asy -f pdf -u"N=1" trinimfig
+latexmk -pdf -jobname=trinim1 trinim.tex
+
 asy -f pdf -u"N=2" trinimfig
 latexmk -pdf -jobname=trinim2 trinim.tex
 
