@@ -1,8 +1,9 @@
-size(300,300);
 
 int N = 6;
 
 usersetting();
+
+size(N * 2cm, N * 2cm);
 
 real radius = 1.0 / N;
 real dist = 0.2/N;
