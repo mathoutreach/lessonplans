@@ -1,4 +1,4 @@
-A lesson plan suitbale for grades 2-4 which focuses on symmetry.
+A lesson plan suitable for grades 2-4 which focuses on symmetry.
 
 
 This lesson plan is designed for about a one-hour long class.
