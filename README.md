@@ -8,7 +8,7 @@ I have tried to make the material accessible to math teachers as well.
 
 The repository is open-source, which, I hope, will help keep the
 materials accessible for a longer term to more people.  The text is
-written in TeX, and the figures in Asympsote
+written in TeX, and the figures in Asymptote
 (https://asymptote.sourceforge.io/).  The license is CC BY-SA, as
 described in the license file.
 
